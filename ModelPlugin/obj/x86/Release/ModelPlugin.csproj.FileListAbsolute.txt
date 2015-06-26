@@ -1,0 +1,10 @@
+C:\Users\Hell\Documents\FlatRedBallProjects\ModelPlugin\ModelPlugin\bin\x86\Release\ModelPlugin.dll
+C:\Users\Hell\Documents\FlatRedBallProjects\ModelPlugin\ModelPlugin\bin\x86\Release\ModelPlugin.pdb
+C:\Users\Hell\Documents\FlatRedBallProjects\ModelPlugin\ModelPlugin\bin\x86\Release\EditorObjectsXna.dll
+C:\Users\Hell\Documents\FlatRedBallProjects\ModelPlugin\ModelPlugin\bin\x86\Release\FlatRedBall.dll
+C:\Users\Hell\Documents\FlatRedBallProjects\ModelPlugin\ModelPlugin\bin\x86\Release\FlatRedBall.Plugin.dll
+C:\Users\Hell\Documents\FlatRedBallProjects\ModelPlugin\ModelPlugin\bin\x86\Release\FlatRedBall.PropertyGrid.dll
+C:\Users\Hell\Documents\FlatRedBallProjects\ModelPlugin\ModelPlugin\bin\x86\Release\Glue.exe
+C:\Users\Hell\Documents\FlatRedBallProjects\ModelPlugin\ModelPlugin\bin\x86\Release\GlueSaveClasses.dll
+C:\Users\Hell\Documents\FlatRedBallProjects\ModelPlugin\ModelPlugin\obj\x86\Release\ModelPlugin.dll
+C:\Users\Hell\Documents\FlatRedBallProjects\ModelPlugin\ModelPlugin\obj\x86\Release\ModelPlugin.pdb

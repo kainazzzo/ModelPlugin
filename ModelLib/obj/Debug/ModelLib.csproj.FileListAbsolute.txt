@@ -1,0 +1,5 @@
+C:\Users\Hell\Documents\FlatRedBallProjects\ModelPlugin\ModelLib\bin\Debug\ModelLib.dll
+C:\Users\Hell\Documents\FlatRedBallProjects\ModelPlugin\ModelLib\bin\Debug\ModelLib.pdb
+C:\Users\Hell\Documents\FlatRedBallProjects\ModelPlugin\ModelLib\obj\Debug\ModelLib.csprojResolveAssemblyReference.cache
+C:\Users\Hell\Documents\FlatRedBallProjects\ModelPlugin\ModelLib\obj\Debug\ModelLib.dll
+C:\Users\Hell\Documents\FlatRedBallProjects\ModelPlugin\ModelLib\obj\Debug\ModelLib.pdb
