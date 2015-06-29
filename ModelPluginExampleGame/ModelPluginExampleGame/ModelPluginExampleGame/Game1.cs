@@ -55,7 +55,7 @@ namespace ModelPluginExampleGame
 			CameraSetup.SetupCamera(SpriteManager.Camera, graphics);
 			GlobalContent.Initialize();
 
-            //ScreenManager.Start(typeof(SomeScreen).FullName);
+			FlatRedBall.Screens.ScreenManager.Start(typeof(ModelPluginExampleGame.Screens.GameScreen));
 
             base.Initialize();
         }
