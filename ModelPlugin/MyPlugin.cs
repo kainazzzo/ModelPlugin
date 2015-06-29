@@ -36,7 +36,7 @@ namespace ModelPlugin
 
         public override Version Version
         {
-            get { return new Version(0, 5); }
+            get { return new Version(0, 6); }
         }
 
         public override string FriendlyName

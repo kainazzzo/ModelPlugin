@@ -22,7 +22,7 @@ namespace ModelPluginExampleGame.Screens
 		#endif
 		
 		private ModelPluginExampleGame.Entities.ModelTest ModelTestInstance;
-		private ModelPluginExampleGame.Entities.CameraEntiry CameraEntiryInstance;
+		private ModelPluginExampleGame.Entities.CameraEntity CameraEntiryInstance;
 
 		public GameScreen()
 			: base("GameScreen")
@@ -35,7 +35,7 @@ namespace ModelPluginExampleGame.Screens
 			LoadStaticContent(ContentManagerName);
 			ModelTestInstance = new ModelPluginExampleGame.Entities.ModelTest(ContentManagerName, false);
 			ModelTestInstance.Name = "ModelTestInstance";
-			CameraEntiryInstance = new ModelPluginExampleGame.Entities.CameraEntiry(ContentManagerName, false);
+			CameraEntiryInstance = new ModelPluginExampleGame.Entities.CameraEntity(ContentManagerName, false);
 			CameraEntiryInstance.Name = "CameraEntiryInstance";
 			
 			
@@ -151,7 +151,7 @@ namespace ModelPluginExampleGame.Screens
 			}
 			#endif
 			ModelPluginExampleGame.Entities.ModelTest.LoadStaticContent(contentManagerName);
-			ModelPluginExampleGame.Entities.CameraEntiry.LoadStaticContent(contentManagerName);
+			ModelPluginExampleGame.Entities.CameraEntity.LoadStaticContent(contentManagerName);
 			CustomLoadStaticContent(contentManagerName);
 		}
 		[System.Obsolete("Use GetFile instead")]

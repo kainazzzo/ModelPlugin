@@ -116,9 +116,10 @@
     <Compile Include="..\..\..\ModelLib\ModelDrawableBatch.cs">
       <Link>ModelPlugin\ModelDrawableBatch.cs</Link>
     </Compile>
-    <Compile Include="Entities\CameraEntiry.cs" />
-    <Compile Include="Entities\CameraEntiry.Generated.cs">
-      <DependentUpon>CameraEntiry.cs</DependentUpon>
+    <Compile Include="DataTypes\TileMapInfo.Generated.cs" />
+    <Compile Include="Entities\CameraEntity.cs" />
+    <Compile Include="Entities\CameraEntity.Generated.cs">
+      <DependentUpon>cameraentity.cs</DependentUpon>
     </Compile>
     <Compile Include="Entities\ModelTest.cs" />
     <Compile Include="Entities\ModelTest.Generated.cs">

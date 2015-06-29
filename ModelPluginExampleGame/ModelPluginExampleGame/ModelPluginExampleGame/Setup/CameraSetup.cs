@@ -18,7 +18,6 @@ namespace ModelPluginExampleGame
 			}
 			internal static void SetupCamera (Camera cameraToSetUp, GraphicsDeviceManager graphicsDeviceManager, int width, int height)
 			{
-				cameraToSetUp.UsePixelCoordinates();
 			}
 			internal static void ResetCamera (Camera cameraToReset)
 			{

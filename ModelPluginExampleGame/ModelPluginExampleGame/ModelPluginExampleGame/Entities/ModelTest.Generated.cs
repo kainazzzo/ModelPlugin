@@ -22,7 +22,9 @@ namespace ModelPluginExampleGame.Entities
 		static object mLockObject = new object();
 		static System.Collections.Generic.List<string> mRegisteredUnloads = new System.Collections.Generic.List<string>();
 		static System.Collections.Generic.List<string> LoadedContentManagers = new System.Collections.Generic.List<string>();
+		protected static Microsoft.Xna.Framework.Graphics.Model Model;
 		
+		private ModelPlugin.ModelDrawableBatch ModelDrawableBatchInstance;
 		protected FlatRedBall.Graphics.Layer LayerProvidedByContainer = null;
 
         public ModelTest()
@@ -50,6 +52,8 @@ namespace ModelPluginExampleGame.Entities
 		{
 			// Generated Initialize
 			LoadStaticContent(ContentManagerName);
+			ModelDrawableBatchInstance = new ModelPlugin.ModelDrawableBatch();
+			ModelDrawableBatchInstance.Name = "ModelDrawableBatchInstance";
 			
 			PostInitialize();
 			if (addToManagers)
@@ -65,11 +69,13 @@ namespace ModelPluginExampleGame.Entities
 		{
 			LayerProvidedByContainer = layerToAddTo;
 			FlatRedBall.SpriteManager.AddPositionedObject(this);
+			ModelDrawableBatchInstance.AddToManagers();
 		}
 		public virtual void AddToManagers (FlatRedBall.Graphics.Layer layerToAddTo)
 		{
 			LayerProvidedByContainer = layerToAddTo;
 			FlatRedBall.SpriteManager.AddPositionedObject(this);
+			ModelDrawableBatchInstance.AddToManagers();
 			AddToManagersBottomUp(layerToAddTo);
 			CustomInitialize();
 		}
@@ -88,6 +94,10 @@ namespace ModelPluginExampleGame.Entities
 			// Generated Destroy
 			FlatRedBall.SpriteManager.RemovePositionedObject(this);
 			
+			if (ModelDrawableBatchInstance != null)
+			{
+				ModelDrawableBatchInstance.Destroy();
+			}
 
 
 			CustomDestroy();
@@ -98,6 +108,15 @@ namespace ModelPluginExampleGame.Entities
 		{
 			bool oldShapeManagerSuppressAdd = FlatRedBall.Math.Geometry.ShapeManager.SuppressAddingOnVisibilityTrue;
 			FlatRedBall.Math.Geometry.ShapeManager.SuppressAddingOnVisibilityTrue = true;
+			if (ModelDrawableBatchInstance.Parent == null)
+			{
+				ModelDrawableBatchInstance.CopyAbsoluteToRelative();
+				ModelDrawableBatchInstance.AttachTo(this, false);
+			}
+			ModelDrawableBatchInstance.Model = Model;
+			ModelDrawableBatchInstance.ScaleX = 15f;
+			ModelDrawableBatchInstance.ScaleY = 15f;
+			ModelDrawableBatchInstance.ScaleZ = 15f;
 			FlatRedBall.Math.Geometry.ShapeManager.SuppressAddingOnVisibilityTrue = oldShapeManagerSuppressAdd;
 		}
 		public virtual void AddToManagersBottomUp (FlatRedBall.Graphics.Layer layerToAddTo)
@@ -107,12 +126,20 @@ namespace ModelPluginExampleGame.Entities
 		public virtual void RemoveFromManagers ()
 		{
 			FlatRedBall.SpriteManager.ConvertToManuallyUpdated(this);
+			if (ModelDrawableBatchInstance != null)
+			{
+				ModelDrawableBatchInstance.Destroy();
+			}
 		}
 		public virtual void AssignCustomVariables (bool callOnContainedElements)
 		{
 			if (callOnContainedElements)
 			{
 			}
+			ModelDrawableBatchInstance.Model = Model;
+			ModelDrawableBatchInstance.ScaleX = 15f;
+			ModelDrawableBatchInstance.ScaleY = 15f;
+			ModelDrawableBatchInstance.ScaleZ = 15f;
 		}
 		public virtual void ConvertToManuallyUpdated ()
 		{
@@ -148,6 +175,7 @@ namespace ModelPluginExampleGame.Entities
 						mRegisteredUnloads.Add(ContentManagerName);
 					}
 				}
+				Model = FlatRedBall.FlatRedBallServices.Load<Microsoft.Xna.Framework.Graphics.Model>(@"content/entities/modeltest/model", ContentManagerName);
 			}
 			if (registerUnload && ContentManagerName != FlatRedBall.FlatRedBallServices.GlobalContentManager)
 			{
@@ -171,19 +199,38 @@ namespace ModelPluginExampleGame.Entities
 			}
 			if (LoadedContentManagers.Count == 0)
 			{
+				if (Model != null)
+				{
+					Model= null;
+				}
 			}
 		}
 		[System.Obsolete("Use GetFile instead")]
 		public static object GetStaticMember (string memberName)
 		{
+			switch(memberName)
+			{
+				case  "Model":
+					return Model;
+			}
 			return null;
 		}
 		public static object GetFile (string memberName)
 		{
+			switch(memberName)
+			{
+				case  "Model":
+					return Model;
+			}
 			return null;
 		}
 		object GetMember (string memberName)
 		{
+			switch(memberName)
+			{
+				case  "Model":
+					return Model;
+			}
 			return null;
 		}
 		protected bool mIsPaused;

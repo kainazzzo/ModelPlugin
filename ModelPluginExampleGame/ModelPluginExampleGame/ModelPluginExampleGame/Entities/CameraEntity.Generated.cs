@@ -6,7 +6,7 @@ using Color = Microsoft.Xna.Framework.Color;
 
 namespace ModelPluginExampleGame.Entities
 {
-	public partial class CameraEntiry : FlatRedBall.PositionedObject, FlatRedBall.Graphics.IDestroyable
+	public partial class CameraEntity : FlatRedBall.PositionedObject, FlatRedBall.Graphics.IDestroyable
 	{
         // This is made static so that static lazy-loaded content can access it.
         public static string ContentManagerName
@@ -24,21 +24,23 @@ namespace ModelPluginExampleGame.Entities
 		static System.Collections.Generic.List<string> LoadedContentManagers = new System.Collections.Generic.List<string>();
 		
 		private FlatRedBall.Camera CameraInstance;
+		public float CameraRotationSpeed = 0.3f;
+		public float CameraMovementSpeed = 30f;
 		protected FlatRedBall.Graphics.Layer LayerProvidedByContainer = null;
 
-        public CameraEntiry()
+        public CameraEntity()
             : this(FlatRedBall.Screens.ScreenManager.CurrentScreen.ContentManagerName, true)
         {
 
         }
 
-        public CameraEntiry(string contentManagerName) :
+        public CameraEntity(string contentManagerName) :
             this(contentManagerName, true)
         {
         }
 
 
-        public CameraEntiry(string contentManagerName, bool addToManagers) :
+        public CameraEntity(string contentManagerName, bool addToManagers) :
 			base()
 		{
 			// Don't delete this:
@@ -120,6 +122,8 @@ namespace ModelPluginExampleGame.Entities
 			if (callOnContainedElements)
 			{
 			}
+			CameraRotationSpeed = 0.3f;
+			CameraMovementSpeed = 30f;
 		}
 		public virtual void ConvertToManuallyUpdated ()
 		{
@@ -151,7 +155,7 @@ namespace ModelPluginExampleGame.Entities
 				{
 					if (!mRegisteredUnloads.Contains(ContentManagerName) && ContentManagerName != FlatRedBall.FlatRedBallServices.GlobalContentManager)
 					{
-						FlatRedBall.FlatRedBallServices.GetContentManagerByName(ContentManagerName).AddUnloadMethod("CameraEntiryStaticUnload", UnloadStaticContent);
+						FlatRedBall.FlatRedBallServices.GetContentManagerByName(ContentManagerName).AddUnloadMethod("CameraEntityStaticUnload", UnloadStaticContent);
 						mRegisteredUnloads.Add(ContentManagerName);
 					}
 				}
@@ -162,7 +166,7 @@ namespace ModelPluginExampleGame.Entities
 				{
 					if (!mRegisteredUnloads.Contains(ContentManagerName) && ContentManagerName != FlatRedBall.FlatRedBallServices.GlobalContentManager)
 					{
-						FlatRedBall.FlatRedBallServices.GetContentManagerByName(ContentManagerName).AddUnloadMethod("CameraEntiryStaticUnload", UnloadStaticContent);
+						FlatRedBall.FlatRedBallServices.GetContentManagerByName(ContentManagerName).AddUnloadMethod("CameraEntityStaticUnload", UnloadStaticContent);
 						mRegisteredUnloads.Add(ContentManagerName);
 					}
 				}

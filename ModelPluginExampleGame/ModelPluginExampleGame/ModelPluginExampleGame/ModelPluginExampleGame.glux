@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <GlueProjectSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <In2D>true</In2D>
+  <In2D>false</In2D>
   <RunFullscreen>false</RunFullscreen>
   <SetResolution>false</SetResolution>
   <ResolutionWidth>800</ResolutionWidth>
@@ -25,7 +25,7 @@
         </NamedObjectSave>
         <NamedObjectSave>
           <SourceType>Entity</SourceType>
-          <SourceClassType>Entities\CameraEntiry</SourceClassType>
+          <SourceClassType>Entities\CameraEntity</SourceClassType>
           <InstanceName>CameraEntiryInstance</InstanceName>
           <AttachToContainer>true</AttachToContainer>
           <IndependentOfCamera>true</IndependentOfCamera>
@@ -70,8 +70,30 @@
           <Name>Z</Name>
           <Type>float</Type>
         </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>float</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>CameraRotationSpeed</Name>
+          <Type>float</Type>
+          <DefaultValue xsi:type="xsd:float">0.3</DefaultValue>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>float</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>CameraMovementSpeed</Name>
+          <Type>float</Type>
+          <DefaultValue xsi:type="xsd:float">30</DefaultValue>
+        </CustomVariable>
       </CustomVariables>
-      <Name>Entities\CameraEntiry</Name>
+      <Name>Entities\CameraEntity</Name>
       <NamedObjects>
         <NamedObjectSave>
           <SourceType>FlatRedBallType</SourceType>
@@ -123,6 +145,44 @@
         </CustomVariable>
       </CustomVariables>
       <Name>Entities\ModelTest</Name>
+      <NamedObjects>
+        <NamedObjectSave>
+          <CustomProperty>
+            <Type>Model</Type>
+            <Member>Model</Member>
+            <ValueAsString>Model</ValueAsString>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>ScaleX</Member>
+            <ValueAsFloat>15</ValueAsFloat>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>ScaleY</Member>
+            <ValueAsFloat>15</ValueAsFloat>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>ScaleZ</Member>
+            <ValueAsFloat>15</ValueAsFloat>
+          </CustomProperty>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceFile />
+          <SourceName />
+          <SourceClassType>ModelDrawableBatch</SourceClassType>
+          <InstanceName>ModelDrawableBatchInstance</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+      </NamedObjects>
+      <ReferencedFiles>
+        <ReferencedFileSave>
+          <Name>Entities/ModelTest/Model.fbx</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>Microsoft.Xna.Framework.Graphics.Model</RuntimeType>
+        </ReferencedFileSave>
+      </ReferencedFiles>
       <Is2D>false</Is2D>
     </EntitySave>
   </Entities>
